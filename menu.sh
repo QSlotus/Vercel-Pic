@@ -56,7 +56,7 @@ option3() {
     mkdir ~/geysermc
     cd ~/geysermc
     echo -e "\e[36m开始下载Geyser...\e[0m"
-    #wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
+    wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
     echo -e "\e[36mGeyser下载完毕！\e[0m"
     echo -e "\e[36mGeyser启动中...\e[0m"
     echo -e "\e[31m\e[1m请注意！！！\e[0m"
