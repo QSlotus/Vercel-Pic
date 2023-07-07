@@ -22,7 +22,7 @@ option1() {
     clear
     echo -e "\e[36m即将开始换源...\e[0m"
     cd ~
-    sed -i 's#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#g' ../usr/etc/apt/sources.list
+    sed -i '1s#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#' ../usr/etc/apt/sources.list
     echo -e "\e[36m换源成功！\e[0m"
     echo -e "\e[36m即将开始更新软件包...\e[0m"
     apt update -y 
