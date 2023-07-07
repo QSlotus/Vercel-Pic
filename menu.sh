@@ -12,7 +12,7 @@ welcome() {
     echo -e "3. \e[33m下载 & 安装Geyser\e[0m"
     echo -e "4. \e[33mGeyser，启动！\e[0m"
     # echo -e "5. \e[33m修改远程服务器信息\e[0m"
-    echo -e "\e[33m5. 卸载Geyser\e[0m"
+    echo -e "5. \e[33m卸载Geyser\e[0m"
     echo -e "0. \e[33m退出\e[0m"
     read -p "请输入选项（数字）: " choice
 }
@@ -26,7 +26,7 @@ option1() {
     echo -e "\e[36m换源成功！\e[0m"
     echo -e "\e[36m即将开始更新软件包...\e[0m"
     apt update -y 
-    DEBIAN_FRONTEND=noninteractive apt upgrade
+    DEBIAN_FRONTEND=noninteractive apt upgrade -y
     echo -e "\e[36m软件包更新成功\e[0m"
     echo -e "\e[1m-------------------------------\e[0m"
     read -p "按回车键返回到主菜单..." enter
