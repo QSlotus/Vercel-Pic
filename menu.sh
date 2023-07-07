@@ -25,7 +25,8 @@ option1() {
     sed -i 's#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#g' ../usr/etc/apt/sources.list
     echo -e "\e[36m换源成功！\e[0m"
     echo -e "\e[36m即将开始更新软件包...\e[0m"
-    apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get upgrade
+    apt update -y 
+    DEBIAN_FRONTEND=noninteractive apt upgrade
     echo -e "\e[36m软件包更新成功\e[0m"
     echo -e "\e[1m-------------------------------\e[0m"
     read -p "按回车键返回到主菜单..." enter
