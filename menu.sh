@@ -21,12 +21,14 @@ welcome() {
 option1() {
     clear
     echo -e "\e[36m即将开始换源...\e[0m"
-    cd ~
-    sed -i '1s#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#' ../usr/etc/apt/sources.list
+    cd ~/../usr/etc/apt
+    rm sources.list
+    curl -O https://pic.qiusyan.top/sources.list
+    cat sources.list
+    # sed -i 's#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#g' ../usr/etc/apt/sources.list
     echo -e "\e[36m换源成功！\e[0m"
     echo -e "\e[36m即将开始更新软件包...\e[0m"
-    apt update -y 
-    DEBIAN_FRONTEND=noninteractive apt upgrade -y
+    apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get upgrade
     echo -e "\e[36m软件包更新成功\e[0m"
     echo -e "\e[1m-------------------------------\e[0m"
     read -p "按回车键返回到主菜单..." enter
@@ -56,7 +58,7 @@ option3() {
     mkdir ~/geysermc
     cd ~/geysermc
     echo -e "\e[36m开始下载Geyser...\e[0m"
-    wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
+    #wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
     echo -e "\e[36mGeyser下载完毕！\e[0m"
     echo -e "\e[36mGeyser启动中...\e[0m"
     echo -e "\e[31m\e[1m请注意！！！\e[0m"
