@@ -8,7 +8,7 @@ welcome() {
     echo -e "\e[36m欢迎使用QiuSYan的Geyser安装脚本！\e[0m"
     echo -e "\e[36m请选择一个选项：\e[0m"
     echo -e "1. \e[33mTermux换源 & 更新软件包\e[0m"
-    echo -e "2. \e[33m安装Java环境 & 安装常用软件\e[0m"
+    echo -e "2. \e[33m安装常用软件 & 安装Java环境\e[0m"
     echo -e "3. \e[33m下载 & 安装Geyser\e[0m"
     echo -e "4. \e[33mGeyser，启动！\e[0m"
     # echo -e "5. \e[33m修改远程服务器信息\e[0m"
@@ -28,7 +28,8 @@ option1() {
     # sed -i 's#.*#deb https://mirrors.ustc.edu.cn/termux/apt/termux-main stable main#g' ../usr/etc/apt/sources.list
     echo -e "\e[36m换源成功！\e[0m"
     echo -e "\e[36m即将开始更新软件包...\e[0m"
-    apt-get update -y && DEBIAN_FRONTEND=noninteractive apt-get upgrade
+    apt-get update -y 
+    DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
     echo -e "\e[36m软件包更新成功\e[0m"
     echo -e "\e[1m-------------------------------\e[0m"
     read -p "按回车键返回到主菜单..." enter
@@ -37,17 +38,19 @@ option1() {
 # 定义选项2的函数
 option2() {
     clear
+    echo -e "\e[36m开始安装常用软件...\e[0m"
+    pkg install vim git wget zip unzip -y
+    echo -e "\e[36m常用软件安装完毕！\e[0m"
+    echo -e "已安装\e[1mvim\e[0m、\e[1mgit\e[0m、\e[1mwget\e[0m、\e[1mzip\e[0m、\e[1munzip\e[0m"
+    echo -e "\e[1m-------------------------------\e[0m" 
+    
     echo -e "\e[36m即将开始安装Java环境...\e[0m"
     pkg install openjdk-17 -y
     echo -e "\e[36mJava环境安装成功！\e[0m"
     echo -e "\e[36m开始验证Java环境...\e[0m"
     java -version    
     echo -e "\e[1m-------------------------------\e[0m"        
-    echo -e "\e[36m开始安装常用软件...\e[0m"
-    pkg install vim git wget zip unzip -y
-    echo -e "\e[36m常用软件安装完毕！\e[0m"
-    echo -e "已安装\e[1mvim\e[0m、\e[1mgit\e[0m、\e[1mwget\e[0m、\e[1mzip\e[0m、\e[1munzip\e[0m"
-    echo -e "\e[1m-------------------------------\e[0m"
+    
     read -p "按回车键返回到主菜单..." enter
 }
 
@@ -58,11 +61,11 @@ option3() {
     mkdir ~/geysermc
     cd ~/geysermc
     echo -e "\e[36m开始下载Geyser...\e[0m"
-    #wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
+    wget https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/lastSuccessfulBuild/artifact/bootstrap/standalone/build/libs/Geyser-Standalone.jar -O geyser.jar
     echo -e "\e[36mGeyser下载完毕！\e[0m"
     echo -e "\e[36mGeyser启动中...\e[0m"
     echo -e "\e[31m\e[1m请注意！！！\e[0m"
-    echo -e "\e[31m\e[1m当Geyser启动后，请手动输入 geyser stop 以停止Geyser运行\e[0m"    
+    echo -e "\e[31m\e[1m当Geyser启动完成后（即出现「>」后），请手动输入 geyser stop 以停止Geyser运行\e[0m"    
     java -jar geyser.jar    
     echo -e "\e[1m-------------------------------\e[0m"
    
