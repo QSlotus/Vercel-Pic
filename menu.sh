@@ -1,15 +1,15 @@
-<html><head><meta name="color-scheme" content="light dark"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">#!/bin/bash
+#!/bin/bash
 
-# Made By QiuSYan &amp; ChatGPT
+# Made By QiuSYan & ChatGPT
 
 # 定义提示语界面函数
 welcome() {
     clear
     echo -e "\e[36m欢迎使用QiuSYan的Geyser安装脚本！\e[0m"
     echo -e "\e[36m请选择一个选项：\e[0m"
-    echo -e "1. \e[33mTermux换源 &amp; 更新软件包\e[0m"
-    echo -e "2. \e[33m安装常用软件 &amp; 安装Java环境\e[0m"
-    echo -e "3. \e[33m下载 &amp; 安装Geyser\e[0m"
+    echo -e "1. \e[33mTermux换源 & 更新软件包\e[0m"
+    echo -e "2. \e[33m安装常用软件 & 安装Java环境\e[0m"
+    echo -e "3. \e[33m下载 & 安装Geyser\e[0m"
     echo -e "4. \e[33mGeyser，启动！\e[0m"
     # echo -e "5. \e[33m修改远程服务器信息\e[0m"
     echo -e "5. \e[33m卸载Geyser\e[0m"
@@ -65,10 +65,10 @@ option3() {
     echo -e "\e[36mGeyser下载完毕！\e[0m"
     echo -e "\e[36mGeyser启动中...\e[0m"
     echo -e "\e[31m\e[1m请注意！！！\e[0m"
-    echo -e "\e[31m\e[1m当Geyser启动完成后（即出现「&gt;」后），请手动输入 geyser stop 以停止Geyser运行\e[0m"    
+    echo -e "\e[31m\e[1m当Geyser启动完成后（即出现「>」后），请手动输入 geyser stop 以停止Geyser运行\e[0m"    
     java -jar geyser.jar    
     echo -e "\e[1m-------------------------------\e[0m"
-    
+   
     echo -e "\e[36m开始配置config.yml...\e[0m"
         
     echo -n "请输入远程服务器地址："
@@ -152,5 +152,4 @@ while true; do
 done
 
 echo -e "\e[36m谢谢使用！\e[0m"
-echo -e "\e[36m\e[1mMade By QiuSYan &amp; ChatGPT\e[0m"
-    </pre></body></html>
+echo -e "\e[36m\e[1mMade By QiuSYan & ChatGPT\e[0m"
